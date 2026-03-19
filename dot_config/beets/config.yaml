@@ -1,0 +1,23 @@
+directory: ~/Desktop/beets/music
+library: ~/.config/beets/library.db
+original_date: yes
+import:
+  write: no
+  hardlink: yes
+  incremental: yes
+  quiet: yes
+  quiet_fallback: asis
+  log: ~/.config/beets/log.txt
+match:
+  strong_rec_threshold: 0.2
+paths:
+  default: $albumartist/$album ($year)%aunique{}/$albumartist - $album%if{$disctotal > 1, - $disc - }$track - $title
+  singleton: Non-Album/$artist/$title
+  comp: Compilations/$album%aunique{}/$track $title
+
+plugins: discogs drop2beets
+discogs:
+  index_tracks: yes
+  source_weight: 1.0
+drop2beets:
+  dropbox_path: ~/Desktop/drop-music
