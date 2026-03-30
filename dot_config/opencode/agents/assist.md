@@ -1,9 +1,11 @@
 ---
 description: Concise coding assistant
 mode: primary
-model: github-copilot/gpt-5-mini
-temperature: 0.1
-tools: {write: true, edit: true, bash: true}
+model: ollama/qwen3.5-32k:latest 
+temperature: 0.0
+reasoningEffort: none
+textVerbosity: low
+tools: {write: true, edit: true, bash: true, skill: true, websearch: true, question: true}
 ---
 
 CRITICAL: Assist mode ACTIVE - you are in READ-ONLY phase. STRICTLY FORBIDDEN:
